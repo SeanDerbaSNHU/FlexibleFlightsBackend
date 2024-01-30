@@ -1,9 +1,3 @@
-/*import { Duffel } from '@duffel/api'
-
-const duffel = new Duffel({
-  token: duffel_test_1qLh1AiM7nYWQ5tKG-KMYxwNn74jHhPKYd2BbYTnZYe,
-})*/
-
 /*const http = require('http');
  
 const requestListener = (req, res)=>{
@@ -29,14 +23,21 @@ server.listen(3000,'localhost', function(){
     console.log("Server is Listening at Port 3000!");
 });*/
 
-var express = require('express'); 
+import {Duffel} from '@duffel/api';
+const duffel = new Duffel({
+  token: 'duffel_test_1qLh1AiM7nYWQ5tKG-KMYxwNn74jHhPKYd2BbYTnZYe',
+})
+
+const aircraft = await duffel.aircraft.get('arc_00009VMF8AhXSSRnQDI6Hi')
+console.log(aircraft)
+
+/*import express from 'express'; 
 var app = express(); 
  
-const bodyParser = require('body-parser'); 
 var server = app.listen(3000); 
  
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(json()); 
+app.use(urlencoded({ extended: true })); 
  
 app.post('/postdata', (req, res) => { 
 	var data = req.body.data; // your data 
@@ -45,4 +46,4 @@ app.post('/postdata', (req, res) => {
 	res.status(200).json({ 
 		message: "Data received successfully" 
 	}); 
-}); 
+}); */
