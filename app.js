@@ -22,6 +22,7 @@ const server = http.createServer(requestListener);
 server.listen(3000,'localhost', function(){
     console.log("Server is Listening at Port 3000!");
 });*/
+console.log('Running!');
 
 import {Duffel} from '@duffel/api';
 const duffel = new Duffel({
@@ -29,7 +30,7 @@ const duffel = new Duffel({
 })
 
 const aircraft = await duffel.aircraft.get('arc_00009VMF8AhXSSRnQDI6Hi')
-//console.log(aircraft)
+console.log(aircraft)
 
 import express from 'express'; 
 import { json } from 'express';
@@ -45,7 +46,6 @@ app.post('/postdata', (req, res) => {
     // do something with that data (write to a DB, for instance) 
     console.log("message recieved");
 	res.status(200).json({ 
-		message: "Data received successfully",
-    aircraft
+		message: "Data received successfully"
 	}); 
 }); 
