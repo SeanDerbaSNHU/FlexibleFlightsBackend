@@ -29,21 +29,23 @@ const duffel = new Duffel({
 })
 
 const aircraft = await duffel.aircraft.get('arc_00009VMF8AhXSSRnQDI6Hi')
-console.log(aircraft)
+//console.log(aircraft)
 
-/*import express from 'express'; 
+import express from 'express'; 
+import { json } from 'express';
 var app = express(); 
  
 var server = app.listen(3000); 
  
-app.use(json()); 
-app.use(urlencoded({ extended: true })); 
+app.use(json); 
+//app.use(urlencoded({ extended: true })); 
  
 app.post('/postdata', (req, res) => { 
 	var data = req.body.data; // your data 
     // do something with that data (write to a DB, for instance) 
     console.log("message recieved");
 	res.status(200).json({ 
-		message: "Data received successfully" 
+		message: "Data received successfully",
+    aircraft
 	}); 
-}); */
+}); 
