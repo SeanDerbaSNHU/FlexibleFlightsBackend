@@ -24,15 +24,15 @@ server.listen(3000,'localhost', function(){
 });*/
 console.log('Running!');
 
-/*
+
 import {Duffel} from '@duffel/api';
 const duffel = new Duffel({
   token: 'duffel_test_1qLh1AiM7nYWQ5tKG-KMYxwNn74jHhPKYd2BbYTnZYe',
 })
-*/
 
-//const aircraft = await duffel.aircraft.get('arc_00009VMF8AhXSSRnQDI6Hi')
-//console.log(aircraft)
+
+const aircraft = await duffel.aircraft.get('arc_00009VMF8AhXSSRnQDI6Hi')
+console.log(aircraft)
 
 import express from 'express'; 
 import  json  from 'express';
@@ -42,7 +42,7 @@ var server = app.listen(3000, ()=>{
   console.log('server running at port 3000')
 }); 
  
-//app.use(json); 
+app.use(json); 
 //app.urlencoded({ extended: true }); 
 
 app.get('/', (req,res)=>{
@@ -50,13 +50,14 @@ app.get('/', (req,res)=>{
   console.log("Connection established")
 })
  
-/*
+
 app.post('/postdata', (req, res) => { 
-	var data = req.body.data; // your data 
+	//var data = req.body.data; // your data 
     // do something with that data (write to a DB, for instance) 
+  console.log(req.params)
   console.log("message recieved");
 	res.status(200).json({ 
 		message: "Data received successfully"
 	}); 
 }); 
-*/
+
