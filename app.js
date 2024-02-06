@@ -29,22 +29,28 @@ const duffel = new Duffel({
   token: 'duffel_test_1qLh1AiM7nYWQ5tKG-KMYxwNn74jHhPKYd2BbYTnZYe',
 })
 
-const aircraft = await duffel.aircraft.get('arc_00009VMF8AhXSSRnQDI6Hi')
-console.log(aircraft)
+//const aircraft = await duffel.aircraft.get('arc_00009VMF8AhXSSRnQDI6Hi')
+//console.log(aircraft)
 
 import express from 'express'; 
 import { json } from 'express';
 var app = express(); 
  
-var server = app.listen(3000); 
+var server = app.listen(3000, ()=>{
+  console.log('server running at port 3000')
+}); 
  
 app.use(json); 
 //app.use(urlencoded({ extended: true })); 
+
+app.get('/', (req,res)=>{
+  res.send("Hello from express server")
+})
  
 app.post('/postdata', (req, res) => { 
 	var data = req.body.data; // your data 
     // do something with that data (write to a DB, for instance) 
-    console.log("message recieved");
+  console.log("message recieved");
 	res.status(200).json({ 
 		message: "Data received successfully"
 	}); 
