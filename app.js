@@ -33,7 +33,7 @@ const duffel = new Duffel({
 //console.log(aircraft)
 
 import express from 'express'; 
-import { json } from 'express';
+import  json  from 'express';
 var app = express(); 
  
 var server = app.listen(3000, ()=>{
