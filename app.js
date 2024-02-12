@@ -54,7 +54,7 @@ app.get('/', (req,res)=>{
 app.post('/postdata', (req, res) => { 
 	//var data = req.body.data; // your data 
     // do something with that data (write to a DB, for instance) 
-  console.log(req.params)
+  
   console.log("message recieved");
 	res.status(200).json({ 
 		message: "Data received successfully"
